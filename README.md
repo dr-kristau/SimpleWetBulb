@@ -7,7 +7,7 @@ The output is color-coded:
 - green text: low risk (<=85ºF, <=29.44ºC)
 - yellow text: moderate risk (<=88ºF, <=31.11ºC)
 - red text: high risk (<=90ºF, <=32.22ºC)
-- black backgroud, white text, bold, blinking: extreme risk (>90ºF, >32.22ºC)
+- black background, white text, bold, blinking: extreme risk (>90ºF, >32.22ºC)
 
 To test the script, you can make a new virtualenv and then install simplewetbulb:
 
