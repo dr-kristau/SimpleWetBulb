@@ -6,7 +6,7 @@ Calculates the wet-bulb temperature, heat index, and dew point from a given temp
 2. Heat index: The National Oceanic and Atmospheric Administration of the US (https://www.wpc.ncep.noaa.gov/html/heatindex.shtml)
 3. Dew point: Magnus  formula  [Sonntag90] (http://irtfweb.ifa.hawaii.edu/~tcs3/tcs3/Misc/Dewpoint_Calculation_Humidity_Sensor_E.pdf)
 
-The output is color-coded:
+The output is color-coded according to the following ranges of wet-bulb temperature:
 - white text: no risk (<=80ºF, <=26.66ºC)
 - green text: low risk (<=85ºF, <=29.44ºC)
 - yellow text: moderate risk (<=88ºF, <=31.11ºC)
