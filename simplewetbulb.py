@@ -8,9 +8,9 @@ def cli(temp, humid):
     wetbulb = calc_wetbulb(temp, humid)
     heatindex = calc_heatindex(temp, humid)
     dewpoint = calc_dewpoint(temp, humid)
-    textwbt = f"wet-bulb temperature (ºC): {np.format_float_positional(wetbulb, 1, True, True, '-')}"
-    texthi = f"heat index (ºC): {np.format_float_positional(heatindex, 1, True, True, '-')}"
-    textdp = f"dew point (ºC): {np.format_float_positional(dewpoint, 1, True, True, '-')}"
+    textwbt = f"wet-bulb temperature (ºC): {np.format_float_positional(wetbulb, 0, True, True, '-')}"
+    texthi = f"heat index (ºC): {np.format_float_positional(heatindex, 0, True, True, '-')}"
+    textdp = f"dew point (ºC): {np.format_float_positional(dewpoint, 0, True, True, '-')}"
     
     if np.less_equal(wetbulb, 26.66):
        click.echo(click.style(textwbt, fg='white'))
