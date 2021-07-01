@@ -1,6 +1,6 @@
 # SimpleWetBulb
 
-Calculate the wet-bulb temperature, heat index, and dew point from a given temperature in degrees Celcius and the relative humidity. The calculations are taken from the following authoritative sources:
+Calculates the wet-bulb temperature, heat index, and dew point from a given temperature in degrees Celcius and the relative humidity. The calculations are taken from the following authoritative sources:
 
 Wet-bulb temperature: Stoll formula (2011, DOI:https://doi.org/10.1175/JAMC-D-11-0143.1) 
 Heat index: The National Oceanic and Atmospheric Administration of the US (https://www.wpc.ncep.noaa.gov/html/heatindex.shtml)
