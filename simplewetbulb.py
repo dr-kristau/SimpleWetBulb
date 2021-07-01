@@ -12,23 +12,23 @@ def cli(temp, humid):
     texthi = f"heat index (ºC): {np.format_float_positional(heatindex, 0, True, True, '-')}"
     textdp = f"dew point (ºC): {np.format_float_positional(dewpoint, 0, True, True, '-')}"
     
-    if np.less_equal(wetbulb, 26.66):
+    if np.less_equal(wetbulb, fartoCelc(80)):
        click.echo(click.style(textwbt, fg='white'))
        click.echo(click.style(texthi, fg='white'))
        click.echo(click.style(textdp, fg='white'))
-    elif np.less_equal(wetbulb, 29.44):
+    elif np.less_equal(wetbulb, fartoCelc(85)):
        click.echo(click.style(textwbt, fg='green'))
        click.echo(click.style(texthi, fg='green'))
        click.echo(click.style(textdp, fg='green'))
-    elif np.less_equal(wetbulb, 31.11):
+    elif np.less_equal(wetbulb, fartoCelc(88)):
        click.echo(click.style(textwbt, fg='yellow'))
        click.echo(click.style(texthi, fg='yellow'))  
        click.echo(click.style(textdp, fg='yellow'))
-    elif np.less_equal(wetbulb, 32.22):
+    elif np.less_equal(wetbulb, fartoCelc(90)):
        click.echo(click.style(textwbt, fg='red')) 
        click.echo(click.style(texthi, fg='red'))  
        click.echo(click.style(textdp, fg='red'))  
-    elif np.greater(wetbulb, 32.22):
+    elif np.greater(wetbulb, fartoCelc(90)):
        click.echo(click.style(textwbt, bold=True, bg='white', fg='black')) 
        click.echo(click.style(texthi, bold=True, bg='white', fg='black')) 
        click.echo(click.style(textdp, bold=True, bg='white', fg='black'))    
