@@ -10,29 +10,30 @@ def cli(temp, humid, input):
     tempC = temp if isCelc else fartoCelc(temp)
     tempF = temp if not isCelc else celctoFar(temp)
     wetbulbC = calc_wetbulb(tempC, humid)
+    wetbulbF = celctoFar(wetbulbC)
     heatindexF = calc_heatindex(tempF, humid)
     dewpointC = calc_dewpoint(tempC, humid)
-    textwbt = f"wet-bulb temperature: {np.format_float_positional(wetbulbC, 1, True, True, '-')}ºC, {np.format_float_positional(celctoFar(wetbulbC), 1, True, True, '-')}ºF"
+    textwbt = f"wet-bulb temperature: {np.format_float_positional(wetbulbC, 1, True, True, '-')}ºC, {np.format_float_positional(wetbulbF, 1, True, True, '-')}ºF"
     texthi = f"heat index: {np.format_float_positional(fartoCelc(heatindexF), 1, True, True, '-')}ºC, {np.format_float_positional(heatindexF, 1, True, True, '-')}ºF"
     textdp = f"dew point: {np.format_float_positional(dewpointC, 1, True, True, '-')}ºC, {np.format_float_positional(celctoFar(dewpointC), 1, True, True, '-')}ºF"
     
-    if np.less_equal(wetbulbC, fartoCelc(80)):
+    if np.less_equal(wetbulbF, 80):
        click.echo(click.style(textwbt, fg='white'))
        click.echo(click.style(texthi, fg='white'))
        click.echo(click.style(textdp, fg='white'))
-    elif np.less_equal(wetbulbC, fartoCelc(85)):
+    elif np.less_equal(wetbulbF, 85):
        click.echo(click.style(textwbt, fg='green'))
        click.echo(click.style(texthi, fg='green'))
        click.echo(click.style(textdp, fg='green'))
-    elif np.less_equal(wetbulbC, fartoCelc(88)):
+    elif np.less_equal(wetbulbF, 88):
        click.echo(click.style(textwbt, fg='yellow'))
        click.echo(click.style(texthi, fg='yellow'))  
        click.echo(click.style(textdp, fg='yellow'))
-    elif np.less_equal(wetbulbC, fartoCelc(90)):
+    elif np.less_equal(wetbulbF, 90):
        click.echo(click.style(textwbt, fg='red')) 
        click.echo(click.style(texthi, fg='red'))  
        click.echo(click.style(textdp, fg='red'))  
-    elif np.greater(wetbulbC, fartoCelc(90)):
+    elif np.greater(wetbulbF, 90):
        click.echo(click.style(textwbt, bold=True, bg='white', fg='black')) 
        click.echo(click.style(texthi, bold=True, bg='white', fg='black')) 
        click.echo(click.style(textdp, bold=True, bg='white', fg='black'))    
