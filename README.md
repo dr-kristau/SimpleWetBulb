@@ -30,5 +30,5 @@ $ simplewetbulb
 or:
 
 ```
-$ simplewetbulb --temp 30 --humid 30
+$ simplewetbulb --temp 30 --humid 30 --input ºC
 ```
